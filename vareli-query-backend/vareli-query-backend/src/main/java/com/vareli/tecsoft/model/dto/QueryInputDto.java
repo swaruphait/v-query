@@ -1,5 +1,7 @@
 package com.vareli.tecsoft.model.dto;
 
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,6 +15,7 @@ import lombok.ToString;
 @ToString
 public class QueryInputDto {
     private Integer id;
-    private Object ans;     
-    private Object ansid;   
+    private String qsn;
+    private List<String> ans;     
+    private List<Long> ansid;   
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,5 +23,10 @@ public class QueryController {
     @PostMapping("/addQuery")
     public ResponseEntity<?> addQuery(@RequestBody List<QueryInputDto> inputList) {
         return queryService.addQuery(inputList);
+    }
+
+    @GetMapping("/fetchAllQuery")
+    public ResponseEntity<?> fetchAllQuery() {
+        return queryService.fetchAllQuery();
     }
 }

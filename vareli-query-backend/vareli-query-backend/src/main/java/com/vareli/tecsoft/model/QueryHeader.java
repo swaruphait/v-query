@@ -23,7 +23,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @Entity
-@Table(name = "mst_query_hdr")
+@Table(name = "trn_query_hdr")
 public class QueryHeader {
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)

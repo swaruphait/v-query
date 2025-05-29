@@ -10,6 +10,8 @@ public interface QueryService {
 
     ResponseEntity<?> addQuery(List<QueryInputDto> inputList);
 
+    ResponseEntity<?> fetchAllQuery();
+
 
     
 }
