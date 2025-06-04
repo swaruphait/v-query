@@ -2,7 +2,6 @@ package com.vareli.tecsoft.serviceImpl;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,15 +29,16 @@ public class QuestionServiceImpl implements QuestionService {
         question.setQsnType(dto.getQsnType());
         question.setMultipleChoose(dto.isMultipleChoose());
         question.setProject(dto.getProject());
+        question.setMandatory(dto.isMandatory());
         question.setStatus(true);
 
         if (dto.getOptionLists()!=null) {
-             Set<OptionList> options = dto.getOptionLists().stream().map(optDto -> {
+             List<OptionList> options = dto.getOptionLists().stream().map(optDto -> {
             OptionList opt = new OptionList();
             opt.setName(optDto.getName());
             opt.setQuestionList(question); 
             return opt;
-        }).collect(Collectors.toSet());
+        }).collect(Collectors.toList());
 
         question.setOptionLists(options);
         }

@@ -1,6 +1,6 @@
 package com.vareli.tecsoft.model;
 
-import java.util.Set;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -39,8 +39,9 @@ public class QuestionList extends Auditable<String>{
    private String name;
    private String qsnType;
    private boolean multipleChoose;
+   private boolean mandatory;
    @OneToMany(mappedBy = "questionList", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-   private Set<OptionList> optionLists;
+   private List<OptionList> optionLists;
    private String project;
    private boolean status;
 }

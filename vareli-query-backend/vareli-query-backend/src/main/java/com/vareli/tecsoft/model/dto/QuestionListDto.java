@@ -19,5 +19,6 @@ public class QuestionListDto {
     private boolean multipleChoose;
     private List<OptionListDto> optionLists;
     private String project;
+     private boolean mandatory;
     private boolean status;
 }

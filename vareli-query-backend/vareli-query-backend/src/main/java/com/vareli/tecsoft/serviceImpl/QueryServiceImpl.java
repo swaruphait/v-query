@@ -2,6 +2,7 @@ package com.vareli.tecsoft.serviceImpl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,8 +12,10 @@ import org.springframework.stereotype.Service;
 import com.vareli.tecsoft.model.QueryAnswer;
 import com.vareli.tecsoft.model.QueryDetails;
 import com.vareli.tecsoft.model.QueryHeader;
+import com.vareli.tecsoft.model.QuestionList;
 import com.vareli.tecsoft.model.dto.QueryInputDto;
 import com.vareli.tecsoft.repository.QueryHeaderRepository;
+import com.vareli.tecsoft.repository.QuestionListRepository;
 import com.vareli.tecsoft.response.ResponseHandler;
 import com.vareli.tecsoft.service.QueryService;
 
@@ -22,11 +25,16 @@ public class QueryServiceImpl implements QueryService {
     @Autowired
     private QueryHeaderRepository queryHeaderRepository;
 
+    @Autowired
+    private QuestionListRepository questionListRepository;
+
     @Override
     public ResponseEntity<?> addQuery(List<QueryInputDto> inputList) {
         QueryHeader queryHeader = new QueryHeader();
+            QueryInputDto firstInput = inputList.get(0);
+            Optional<QuestionList> byId = questionListRepository.findById(firstInput.getId());
+            queryHeader.setProject(byId.get().getProject());
         List<QueryDetails> detailsList = new ArrayList<>();
-
         for (QueryInputDto dto : inputList) {
             QueryDetails details = new QueryDetails();
             details.setQsnId(dto.getId());

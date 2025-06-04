@@ -28,6 +28,7 @@ public class QueryHeader {
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;
+   private String project;
    @OneToMany(mappedBy = "queryHeader", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
    private List<QueryDetails> queryDetails;
      

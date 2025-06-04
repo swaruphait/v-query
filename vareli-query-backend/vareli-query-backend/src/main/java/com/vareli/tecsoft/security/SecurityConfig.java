@@ -80,12 +80,22 @@ public class SecurityConfig {
         CorsConfiguration corsConfig = new CorsConfiguration();
         corsConfig.setAllowedOrigins(List.of(
             "http://192.168.13.72:4200",
-            "http://localhost:4200",   // Optional: Add localhost for testing
+            "http://localhost:4200", 
             "http://localhost:8080",
             "http://localhost:2557", 
+            "http://localhost:2558", 
+            "http://localhost:2559", 
+            "http://localhost:2560", 
             "http://192.168.13.21:4200",         
             "http://192.168.13.21:2557", 
-            "http://192.168.13.21:8080"
+            "http://192.168.13.21:2558", 
+            "http://192.168.13.21:2559", 
+            "http://192.168.13.21:2560", 
+            "http://192.168.13.21:8080",
+            "https://biogrenetech.com/",
+            "https://namaste-desk.vercel.app/",
+            "https://present-boss.vercel.app/",
+            "https://biogrenetech.vercel.app/"
         ));
         corsConfig.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         corsConfig.setAllowedHeaders(List.of("*")); 
