@@ -95,7 +95,8 @@ public class SecurityConfig {
             "https://biogrenetech.com/",
             "https://namaste-desk.vercel.app/",
             "https://present-boss.vercel.app/",
-            "https://biogrenetech.vercel.app/"
+            "https://biogrenetech.vercel.app/",
+            "https://thetechplanner.vercel.app/"
         ));
         corsConfig.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         corsConfig.setAllowedHeaders(List.of("*")); 
