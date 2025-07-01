@@ -31,9 +31,9 @@ public class QueryServiceImpl implements QueryService {
     @Override
     public ResponseEntity<?> addQuery(List<QueryInputDto> inputList) {
         QueryHeader queryHeader = new QueryHeader();
-            QueryInputDto firstInput = inputList.get(0);
-            Optional<QuestionList> byId = questionListRepository.findById(firstInput.getId());
-            queryHeader.setProject(byId.get().getProject());
+        QueryInputDto firstInput = inputList.get(0);
+        Optional<QuestionList> byId = questionListRepository.findById(firstInput.getId());
+        queryHeader.setProject(byId.get().getProject());
         List<QueryDetails> detailsList = new ArrayList<>();
         for (QueryInputDto dto : inputList) {
             QueryDetails details = new QueryDetails();
@@ -72,6 +72,12 @@ public class QueryServiceImpl implements QueryService {
     public ResponseEntity<?> fetchAllQuery() {
         List<QueryHeader> all = queryHeaderRepository.findAll();
         return ResponseHandler.generateResponse("Successfully Featch details!", HttpStatus.OK, all);
+    }
+
+    @Override
+    public ResponseEntity<?> fetchQueryData(String name) {
+        List<QueryHeader> allByProject = queryHeaderRepository.findAllByProject(name);
+        return ResponseHandler.generateResponse("Successfully Featch details!", HttpStatus.OK, allByProject);
     }
 
 }

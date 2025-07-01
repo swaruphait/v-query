@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vareli.tecsoft.model.dto.QueryInputDto;
@@ -28,5 +29,10 @@ public class QueryController {
     @GetMapping("/fetchAllQuery")
     public ResponseEntity<?> fetchAllQuery() {
         return queryService.fetchAllQuery();
+    }
+
+    @GetMapping("/fetchQueryData")
+    public ResponseEntity<?> fetchQueryData(@RequestParam String name) {
+        return queryService.fetchQueryData(name);
     }
 }

@@ -12,6 +12,8 @@ public interface QueryService {
 
     ResponseEntity<?> fetchAllQuery();
 
+    ResponseEntity<?> fetchQueryData(String name);
+
 
     
 }
