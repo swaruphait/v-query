@@ -1,4 +1,4 @@
-package com.vareli.tecsoft.response;
+package com.vareli.tecsoft.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

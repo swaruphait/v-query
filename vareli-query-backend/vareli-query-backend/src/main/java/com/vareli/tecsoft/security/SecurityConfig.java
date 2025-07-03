@@ -34,6 +34,7 @@ public class SecurityConfig {
             "/v3/api-docs",
             "/v3/api-docs/**",
             "/api/open/**",
+            "/uploadfile/**",
             "/swagger-resources",
             "/swagger-resources/**",
             "/configuration/ui",
@@ -96,7 +97,8 @@ public class SecurityConfig {
             "https://namaste-desk.vercel.app/",
             "https://present-boss.vercel.app/",
             "https://biogrenetech.vercel.app/",
-            "https://thetechplanner.vercel.app/"
+            "https://thetechplanner.vercel.app/",
+            "https://vptladmin.vercel.app/"
         ));
         corsConfig.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         corsConfig.setAllowedHeaders(List.of("*")); 

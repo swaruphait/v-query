@@ -7,5 +7,9 @@ import com.vareli.tecsoft.model.SideMenuOption;
 public interface SideMenuService {
 
     ResponseEntity<?> addSideMenu(SideMenuOption sideMenuOption);
+
+    ResponseEntity<?> findAll();
+
+    ResponseEntity<?> findById(Integer id);
     
 }
