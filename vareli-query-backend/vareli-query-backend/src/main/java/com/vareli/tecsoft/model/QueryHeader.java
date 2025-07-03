@@ -1,5 +1,6 @@
 package com.vareli.tecsoft.model;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -31,5 +32,6 @@ public class QueryHeader {
    private String project;
    @OneToMany(mappedBy = "queryHeader", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
    private List<QueryDetails> queryDetails;
+    private LocalDateTime date;
      
 }

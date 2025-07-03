@@ -1,5 +1,6 @@
 package com.vareli.tecsoft.serviceImpl;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -34,6 +35,7 @@ public class QueryServiceImpl implements QueryService {
         QueryInputDto firstInput = inputList.get(0);
         Optional<QuestionList> byId = questionListRepository.findById(firstInput.getId());
         queryHeader.setProject(byId.get().getProject());
+        queryHeader.setDate(LocalDateTime.now());
         List<QueryDetails> detailsList = new ArrayList<>();
         for (QueryInputDto dto : inputList) {
             QueryDetails details = new QueryDetails();
