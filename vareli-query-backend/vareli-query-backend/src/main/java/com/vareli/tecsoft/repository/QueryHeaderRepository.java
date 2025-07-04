@@ -12,7 +12,7 @@ public interface QueryHeaderRepository extends JpaRepository<QueryHeader, Long>{
 
   List<QueryHeader> findAllByProject(String project);
 
-    @Query(value = "SELECT project, count(id) FROM trn_query_hdr group by project", nativeQuery = true)
+    @Query(value = "SELECT project, count(id) as count FROM trn_query_hdr group by project", nativeQuery = true)
      List<Map<String, Integer>> countProjectWise();
     
 }
